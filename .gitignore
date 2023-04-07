@@ -1,0 +1,19 @@
+#### Cache ####
+__pycache__/
+*.py[cod]
+/.idea/*
+
+#### Debug Files ####
+play.py
+play1.py
+play2.py
+
+webdriver/
+t_old.py
+t.py
+t1.py
+t2.py
+
+*_src.py
+/gitPush.bat
+accounts.json

@@ -1,0 +1,22 @@
+name: test
+on:  
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+  - cron: '0 6 * * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+          cache: "pip"      
+      - name: Install requirements
+        run: pip install -r requirements.txt
+      - name: Run Script
+        run: python run.py ${{ secrets.ACCOUNTS }} ${{ secrets.DISCORD }}
